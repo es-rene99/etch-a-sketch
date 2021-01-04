@@ -1,0 +1,14 @@
+:root {
+  --square-size: 25px;
+}
+
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  border: 1px solid red;
+}
+#board {
+  display: grid;
+  grid-template: repeat(16, var(--square-size)) / repeat(16, var(--square-size));
+}
+/* TODO left here, doing the correct grid */
