@@ -11,4 +11,4 @@
   display: grid;
   grid-template: repeat(15, var(--square-size)) / repeat(15, var(--square-size));
 }
-/* TODO left here, doing the correct grid */
+/* TODO need to remove and insert it via JS
