@@ -23,3 +23,8 @@ gridSquares.forEach((square) => {
 });
 
 const resetGrid = document.querySelector('#reset-grid');
+resetGrid.addEventListener('click', () => {
+  gridSquares.forEach((square) => {
+    square.classList.remove('colorized-square');
+  });
+});
