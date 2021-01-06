@@ -2,6 +2,9 @@ const squaresPerSide = 15;
 const squareNumber = squaresPerSide ** 2;
 const sizeOfGrid = `${460}px`;
 
+document.documentElement.style.setProperty('--sizeOfGrid', `${sizeOfGrid}`);
+document.documentElement.style.setProperty('--squaresPerSide', `${squaresPerSide}`);
+
 const boardElement = document.querySelector('#board');
 for (let i = 0; i < squareNumber; i++) {
   const square = document.createElement('div');
@@ -9,26 +12,14 @@ for (let i = 0; i < squareNumber; i++) {
   boardElement.appendChild(square);
 }
 
-document.documentElement.style.setProperty('--sizeOfGrid', `${sizeOfGrid}`);
-document.documentElement.style.setProperty('--squaresPerSide', `${squaresPerSide}`);
-
-function getStyleSheet(unique_title) {
-  for (let i = 0; i < document.styleSheets.length; i++) {
-    const sheet = document.styleSheets[i];
-    if (sheet.title === unique_title) {
-      return sheet;
-    }
-  }
-}
-
 const gridSquares = document.querySelectorAll('.square');
 
-gridSquares.forEach(square => {
+function setColorizedSquare() {
+  this.classList.add('colorized-square');
+}
+
+gridSquares.forEach((square) => {
   square.addEventListener('mouseover', setColorizedSquare);
 });
 
-function setColorizedSquare() {
-  this.classList.add('colorized-square')
-}
-
-let styles = getStyleSheet('main-styles');
+const resetGrid = document.querySelector('#reset-grid');
