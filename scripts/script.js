@@ -1,4 +1,4 @@
-const squaresPerSide = 16;
+const squaresPerSide = 15;
 const squareNumber = squaresPerSide ** 2;
 const sizeOfGrid = `${460}px`;
 
@@ -19,6 +19,16 @@ function getStyleSheet(unique_title) {
       return sheet;
     }
   }
+}
+
+const gridSquares = document.querySelectorAll('.square');
+
+gridSquares.forEach(square => {
+  square.addEventListener('mouseover', setColorizedSquare);
+});
+
+function setColorizedSquare() {
+  this.classList.add('colorized-square')
 }
 
 let styles = getStyleSheet('main-styles');

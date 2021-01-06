@@ -1,5 +1,5 @@
 :root {
-  /* * These are the default values in case JS is disabled*/
+  /* * These are the default values, in case JS is disabled*/
   --square-size: auto;
   --sizeOfGrid: 460px;
   --squaresPerSide: 16;
@@ -8,7 +8,10 @@
 .square {
   width: var(--square-size);
   height: var(--square-size);
-  border: 1px solid red;
+  border: 1px solid #ddd;
+}
+.colorized-square {
+  background-color: black;
 }
 #board {
   display: grid;
