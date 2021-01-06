@@ -1,6 +1,6 @@
 const squaresPerSide = 16;
 const squareNumber = squaresPerSide ** 2;
-const sizeOfGrid = `${960}px`;
+const sizeOfGrid = `${460}px`;
 
 const boardElement = document.querySelector('#board');
 for (let i = 0; i < squareNumber; i++) {
@@ -8,6 +8,9 @@ for (let i = 0; i < squareNumber; i++) {
   square.classList.add('square');
   boardElement.appendChild(square);
 }
+
+document.documentElement.style.setProperty('--sizeOfGrid', `${sizeOfGrid}`);
+document.documentElement.style.setProperty('--squaresPerSide', `${squaresPerSide}`);
 
 function getStyleSheet(unique_title) {
   for (let i = 0; i < document.styleSheets.length; i++) {
@@ -17,8 +20,5 @@ function getStyleSheet(unique_title) {
     }
   }
 }
-// TODO left here, with this method I can insert css in my stylesheet like w3 mentions, instead of inline, need to alter it and be able to enter the size of the grid depending on the square per size
 
-const sheet = document.createElement('style');
-document.body.appendChild(sheet);
-sheet.insertRule();
+let styles = getStyleSheet('main-styles');

@@ -1,14 +1,21 @@
 :root {
-  --square-size: 25px;
+  /* * These are the default values in case JS is disabled*/
+  --square-size: auto;
+  --sizeOfGrid: 460px;
+  --squaresPerSide: 16;
 }
 
 .square {
-  width: auto;
-  height: auto;
+  width: var(--square-size);
+  height: var(--square-size);
   border: 1px solid red;
 }
 #board {
   display: grid;
-  grid-template: repeat(15, var(--square-size)) / repeat(15, var(--square-size));
+  grid-template: repeat(var(--squaresPerSide), var(--square-size)) / repeat(
+      var(--squaresPerSide),
+      var(--square-size)
+    );
+  width: var(--sizeOfGrid);
+  height: var(--sizeOfGrid);
 }
-/* TODO need to remove and insert it via JS
