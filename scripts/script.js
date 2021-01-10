@@ -14,7 +14,7 @@ const errorMessage = {
   outOfRange: '* The number must be between 0 and 100',
 };
 
-// TODO left here assign error message
+// TODO assign error message
 
 function setSquaresPerSideCSS(squarePerSide) {
   document.documentElement.style.setProperty('--squaresPerSide', `${squarePerSide}`);
