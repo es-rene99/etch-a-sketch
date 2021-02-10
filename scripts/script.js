@@ -1,7 +1,7 @@
 const defaultSquarePerSide = 16;
 let squareNumber;
 let gridSquares;
-const sizeOfGrid = `${460}px`;
+const sizeOfGrid = `${82}vw`;
 const boardElement = document.querySelector('#board');
 const squarePerSideElement = document.querySelector('#squarePerSize');
 const change = document.querySelector('#change-size');
@@ -42,6 +42,17 @@ function createBoard() {
   gridSquares = document.querySelectorAll('.square');
   gridSquares.forEach((square) => {
     square.addEventListener('mouseover', setColorizedSquare);
+    // TODO possible mobile solution with Jquery
+    // if (window.matchMedia('(min-width: 900px)')) {
+    //
+    // // TODO remove and leave only for desktop for now...
+    //   square.addEventListener('mouseover', setColorizedSquare);
+    // }
+    // else {
+    //   debugger;
+    //   $('.square').on('tap', setColorizedSquare);
+    // }
+
   });
 }
 
@@ -62,7 +73,6 @@ function setGridNewSize(gridNewValue) {
 function readjustGrid() {
   removeBoard();
   createBoard();
-  // TODO why is hover not working?
 }
 
 function changeGridSize() {
@@ -82,5 +92,3 @@ setSquarePerNumber(defaultSquarePerSide);
 createBoard();
 
 // TODO add an exception handling for Not a number exception else if 0 to 100 value exception else pass!
-
-// TODO when the user selects square 0 display a message showing you selected 0 value, and well that means no squares... what did you thought was going to happen?

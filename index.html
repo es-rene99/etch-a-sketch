@@ -6,16 +6,43 @@
     <title>Etch a Sketch</title>
     <link rel="stylesheet" href="/styles/normalize.css" />
     <link rel="stylesheet" href="/styles/style.css" title="main-styles" />
+    <!-- TODO possible Jquery mobile solution -->
+    <!-- <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript">
+      $(document).bind("mobileinit", function () {
+        $.extend($.mobile, { autoInitializePage: false });
+      });
+    </script> -->
   </head>
   <body>
-    <h1>Etch a Sketch</h1>
-    <button id="reset-grid">Reset grid</button>
-    <label for="squarePerSize">Change Square Per Size:</label>
-    <input type="text" name="squarePerSize" id="squarePerSize" value="16" />
-    <button id="change-size">Change size</button>
-    <strong id="error-message">* Number must be between 0-100</strong>
-    <div id="board"></div>
-
+    <header class="header">
+      <h1 class="header__label">Etch a Sketch</h1>
+    </header>
+    <main class="main">
+      <div id="board" class="main__board"></div>
+      <div class="main__controls">
+        <button id="reset-grid" class="main__control">Reset grid</button>
+        <label for="squarePerSize" class="main__control"
+          >Change Square Per Size:</label
+        >
+        <input
+          type="text"
+          name="squarePerSize"
+          id="squarePerSize"
+          value="16"
+          class="main__control"
+        />
+        <button id="change-size" class="main__control">Change size</button>
+        <strong id="error-message" class="main__control"
+          >* Number must be between 1-100</strong
+        >
+      </div>
+    </main>
     <script src="scripts/script.js"></script>
   </body>
 </html>
